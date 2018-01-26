@@ -17,3 +17,29 @@ header .logo{
   background-image: linear-gradient(#04519b, #044687 60%, #033769);
   color:#fff !important;
 }
+
+.bubble{
+  position: relative;
+  width:580px;
+  min-height:65px;
+  padding:15px;
+  background:#fff,
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+
+.comment-avatar img{
+  width:40px;
+  margin-right:5px;
+}
+
+.friends li{
+  list-style:none;
+  padding:5px;
+  display:inline;
+  float:left;
+}
+.friends img{
+  width:55px;
+}

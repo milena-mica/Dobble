@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Groups: Dobble Social Network</title>
+    <title>Photos: Dobble Social Network</title>
 
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/ekko-lightbox.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
@@ -50,8 +51,8 @@
       <ul class="nav navbar-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="members.html">Members</a></li>
-        <li class="active"><a href="groups.html">Groups</a></li>
-        <li><a href="photos.html">Photos</a></li>
+        <li><a href="groups.html">Groups</a></li>
+        <li class="active"><a href="photos.html">Photos</a></li>
         <li><a href="profile.html">Profile</a></li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -62,37 +63,27 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <div class="groups">
-          <h1 class="page-header">Groups</h1>
-          <div class="group-item">
-            <img src="img/group.png">
-            <h4><a href="#">Sample Group One</a></h4>
-            <p>This is a sample Dobble social network group</p>
-            <p><a href="#" class="btn btn-default">Join Group</a><p>
-          </div>
-          <div class="clearfix"></div>
-          <div class="group-item">
-            <img src="img/group.png">
-            <h4><a href="#">Sample Group Two</a></h4>
-            <p>This is a sample Dobble social network group</p>
-            <p><a href="#" class="btn btn-default">Join Group</a><p>
-          </div>
-          <div class="clearfix"></div>
-          <div class="group-item">
-            <img src="img/group.png">
-            <h4><a href="#">Sample Group Three</a></h4>
-            <p>This is a sample Dobble social network group</p>
-            <p><a href="#" class="btn btn-default">Join Group</a><p>
-          </div>
-          <div class="clearfix"></div>
-          <div class="group-item">
-            <img src="img/group.png">
-            <h4><a href="#">Sample Group Four</a></h4>
-            <p>This is a sample Dobble social network group</p>
-            <p><a href="#" class="btn btn-default">Join Group</a><p>
-          </div>
-          <div class="clearfix"></div>
-        </div>
+        <h1 class="page-header">Photos</h1>
+        <ul class="photos gallery-parent">
+          <li><a href="img/sample1.jpg" data-title="Image One" data-footer="This is image 1"
+            data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent" data-hover="tooltip" data-placement="top"
+            title="This is image one"><img src="img/sample1.jpg" class="img-thumbnail"></a></li>
+          <li><a href="img/sample2.jpg" data-title="Image Two" data-footer="This is image 2"
+            data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent" data-hover="tooltip" data-placement="top"
+            title="This is image two"><img src="img/sample2.jpg" class="img-thumbnail"></a></li>
+          <li><a href="img/sample3.jpg" data-title="Image Three" data-footer="This is image 3"
+            data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent" data-hover="tooltip" data-placement="top"
+            title="This is image three"><img src="img/sample3.jpg" class="img-thumbnail"></a></li>
+          <li><a href="img/sample4.jpg" data-title="Image Four" data-footer="This is image 4"
+            data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent" data-hover="tooltip" data-placement="top"
+            title="This is image four"><img src="img/sample4.jpg" class="img-thumbnail"></a></li>
+          <li><a href="img/sample5.jpg" data-title="Image Five" data-footer="This is image 5"
+            data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent" data-hover="tooltip" data-placement="top"
+            title="This is image five"><img src="img/sample5.jpg" class="img-thumbnail"></a></li>
+          <li><a href="img/sample6.jpg" data-title="Image Six" data-footer="This is image 6"
+            data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent" data-hover="tooltip" data-placement="top"
+            title="This is image six"><img src="img/sample6.jpg" class="img-thumbnail"></a></li>
+        </ul>
       </div><!--col-md-8 end -->
 
       <div class="col-md-4">
@@ -160,8 +151,17 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/ekko-lightbox.js"></script>
+  <script>
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+   });
+        $(function() {
+    $('[data-hover="tooltip"]').tooltip()        
+        })
+   </script>
   </body>
 </html>
